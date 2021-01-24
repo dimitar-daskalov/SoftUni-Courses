@@ -1,0 +1,1 @@
+print(" ".join([x for el in [*[el.split() for el in input().split("|")][::-1]] for x in el]))
