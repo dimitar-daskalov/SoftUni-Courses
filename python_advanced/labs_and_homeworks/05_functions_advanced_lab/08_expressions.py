@@ -1,9 +1,9 @@
-def expressions(nums, current_sum=0, expression=""):
-    if not nums:
+def expressions(nums_received, current_sum=0, expression=""):
+    if not nums_received:
         return [(expression, current_sum)]
 
-    result_plus = expressions(nums[1:], current_sum+nums[0], f"{expression}+{nums[0]}")
-    result_minus = expressions(nums[1:], current_sum-nums[0], f"{expression}-{nums[0]}")
+    result_plus = expressions(nums_received[1:], current_sum+nums_received[0], f"{expression}+{nums_received[0]}")
+    result_minus = expressions(nums_received[1:], current_sum-nums_received[0], f"{expression}-{nums_received[0]}")
     return result_plus + result_minus
 
 
