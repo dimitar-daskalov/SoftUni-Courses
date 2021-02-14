@@ -1,7 +1,9 @@
 def numbers_searching(*numbers):
-    num_list = sorted(numbers)
-    duplicates = sorted(set([x for x in num_list if num_list.count(x) > 1]))
-    values = set(range(num_list[0], (num_list[-1]+1)))
-    missing = sorted(set(num_list) ^ values)
-    return [missing, duplicates]
+    numbers = sorted(numbers)
+    smallest_number = min(numbers)
+    biggest_number = max(numbers)
+    duplicates = sorted(set([x for x in numbers if numbers.count(x) > 1]))
+    numbers_set = set(range(smallest_number, biggest_number + 1))
+    missing_numbers = set(numbers) ^ numbers_set
+    return [max(missing_numbers), duplicates]
 

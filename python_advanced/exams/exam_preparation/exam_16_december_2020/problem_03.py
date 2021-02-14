@@ -1,11 +1,10 @@
-def get_magic_triangle(number):
+def get_magic_triangle(number_received):
     matrix = [[1], [1, 1]]
-    for row_index in range(3, number + 1):
-        row = [1] * row_index
-        matrix.append(row)
-    for row_i in range(2, number):
-        for col_i in range(1, row_i):
-            matrix[row_i][col_i] = matrix[row_i - 1][col_i - 1] + matrix[row_i - 1][col_i]
+    for index in range(3, number_received + 1):
+        current_row = [1] * index
+        matrix.append(current_row)
 
+    for row in range(2, len(matrix)):
+        for col in range(1, row):
+            matrix[row][col] = matrix[row-1][col-1] + matrix[row-1][col]
     return matrix
-
