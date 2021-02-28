@@ -1,8 +1,3 @@
-**/.idea/
-**/Lib/site-packages/
-**/Scripts/
-**/pyvenv.cfg
-__pycache__/
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[cod]
@@ -27,6 +22,8 @@ var/
 wheels/
 pip-wheel-metadata/
 share/python-wheels/
+**/.idea/
+**/Scripts/
 *.egg-info/
 .installed.cfg
 *.egg
