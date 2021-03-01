@@ -1,4 +1,4 @@
-from pokemon_battle_06.project.pokemon import Pokemon
+from project.pokemon import Pokemon
 
 
 class Trainer:
@@ -7,7 +7,7 @@ class Trainer:
         self.pokemon = []
 
     def add_pokemon(self, pokemon: Pokemon):
-        if pokemon.name in self.pokemon:
+        if pokemon.name in [pokemon.name for pokemon in self.pokemon]:
             return f"This pokemon is already caught"
 
         self.pokemon.append(pokemon)
