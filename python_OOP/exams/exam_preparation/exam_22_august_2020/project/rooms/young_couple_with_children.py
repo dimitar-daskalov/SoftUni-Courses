@@ -10,4 +10,6 @@ class YoungCoupleWithChildren(Room):
         self.room_cost = 30
         self.children = list(children)
         self.appliances = [TV(), Fridge(), Laptop()] * self.members_count
-        self.expenses = self.calculate_expenses(self.appliances, self.children)
+        self.calculate_expenses(self.appliances, self.children)
+
+

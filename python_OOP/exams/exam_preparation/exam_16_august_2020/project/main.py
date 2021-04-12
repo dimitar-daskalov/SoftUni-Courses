@@ -18,4 +18,3 @@ def zero_test():
 
 if __name__ == "__main__":
     zero_test()
-

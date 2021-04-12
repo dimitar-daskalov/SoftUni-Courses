@@ -1,28 +1,26 @@
-class UnsuccessfulInstallException(Exception):
-    pass
+from project.software.software import Software
 
 
 class Hardware:
-    def __init__(self, name, type, capacity, memory):
+    def __init__(self, name: str, type: str, capacity: int, memory: int):
         self.name = name
         self.type = type
         self.capacity = capacity
         self.memory = memory
         self.software_components = []
-        self.capacity_used = 0
-        self.memory_used = 0
 
-    def install(self, software):
-        if self.capacity < self.capacity_used + software.capacity_consumption \
-                or self.memory < self.memory_used + software.memory_consumption:
-            raise UnsuccessfulInstallException('Software cannot be installed')
+    def install(self, software: Software):
+        capacity_consumption_sum = sum(
+            [software_component.capacity_consumption for software_component in self.software_components])
+        memory_consumption_sum = sum(
+            [software_component.memory_consumption for software_component in self.software_components])
+
+        if self.capacity < (software.capacity_consumption + capacity_consumption_sum)\
+                or self.memory < (software.memory_consumption + memory_consumption_sum):
+            raise Exception("Software cannot be installed")
 
         self.software_components.append(software)
-        self.capacity_used += software.capacity_consumption
-        self.memory_used += software.memory_consumption
 
-    def uninstall(self, software):
+    def uninstall(self, software: Software):
         if software in self.software_components:
             self.software_components.remove(software)
-            self.capacity_used -= software.capacity_consumption
-            self.memory_used -= software.memory_consumption
