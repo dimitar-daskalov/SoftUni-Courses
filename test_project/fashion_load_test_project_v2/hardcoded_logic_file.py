@@ -1,10 +1,10 @@
 import os
 import shutil
-import webbrowser
+# import webbrowser
 
 
 def open_folder():
-    webbrowser.open(("\\Dcew1164prodinf\TRAITEMENTS\SEPARATION_RUN\GJ\Fashion"))
+    open(("\\Dcew1164prodinf\TRAITEMENTS\SEPARATION_RUN\GJ\Fashion"))
 
 
 def is_empty():
