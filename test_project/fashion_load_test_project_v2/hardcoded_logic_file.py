@@ -1,7 +1,7 @@
 import os
 import shutil
 
-original_working_directory = r"\Dcew1164prodinf\TRAITEMENTS\SEPARATION_RUN\GJ\Fashion"
+original_working_directory = r"X:\SEPARATION_RUN\GJ\Fashion"
 
 
 def open_folder():
@@ -18,7 +18,7 @@ def is_empty():
 
 def move_files():
     source_directory = original_working_directory
-    target_directory = r"\Dcew1164prodinf\TRAITEMENTS\SEPARATION_RUN"
+    target_directory = r"X:\SEPARATION_RUN"
     file_names = os.listdir(source_directory)
     for file_name in file_names:
         shutil.move(os.path.join(source_directory, file_name), target_directory)
