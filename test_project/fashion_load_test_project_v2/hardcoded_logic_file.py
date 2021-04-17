@@ -2,13 +2,16 @@ import os
 import shutil
 import webbrowser
 
+# open folder directory path
 original_working_directory = r"\\Dcew1164prodinf\TRAITEMENTS\SEPARATION_RUN\GJ\Fashion"
 
 
+# open folder function - opens a folder from the file manager
 def open_folder():
     webbrowser.open(original_working_directory)
 
 
+# check if the open folder is empty and returns boolean depending on the result
 def is_empty():
     source_directory = original_working_directory
     file_names = os.listdir(source_directory)
@@ -17,6 +20,7 @@ def is_empty():
     return False
 
 
+# move the files from the opened directory to the loading script folder directory
 def move_files():
     source_directory = original_working_directory
     target_directory = r"\\Dcew1164prodinf\TRAITEMENTS\SEPARATION_RUN"
