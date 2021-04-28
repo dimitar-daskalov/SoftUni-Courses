@@ -90,12 +90,15 @@ def rename_files(folder_name, needed_name):
 
             with open(f"{os.path.join(current_directory, file_name)}", "w") as f:
                 f.write(changed_info)
+            try:
+                os.rename(os.path.join(current_directory, file_name),
+                          os.path.join(current_directory, file_name.replace(file_name.split("_")[3], needed_name)))
+            except IndexError:
+                return "Error!", "The file name is incorrect!"
+        else:
+            return "Error!", "The file structure is incorrect!"
 
-            os.rename(os.path.join(current_directory, file_name),
-                      os.path.join(current_directory, file_name.replace(file_name.split("_")[3], needed_name)))
-            return f"Success!", "Files renamed successfully!"
-
-        return "Error!", "The file structure is incorrect!"
+    return f"Success!", "Files renamed successfully!"
 
 
 # copy and move the renamed files from the created folder to the initial directory using a temp folder,
