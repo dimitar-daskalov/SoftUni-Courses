@@ -79,6 +79,9 @@ def rename_files(folder_name, needed_name):
     if not needed_name:
         return "Error!", "The period cannot be empty!"
 
+    if not needed_name.isdigit():
+        return "Error!", "The period should contain only numbers!"
+
     for file_name in file_names:
         with open(f"{os.path.join(current_directory, file_name)}", "r") as file:
             data_provided = file.read()
