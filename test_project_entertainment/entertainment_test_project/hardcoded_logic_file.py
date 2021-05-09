@@ -76,6 +76,9 @@ def rename_files(folder_name, needed_name):
     file_names = os.listdir(current_directory)
     pattern = r'(\;[0-9]{4}\;[M]\;)|(\;[0-9]{4}\;[W]\;)'
 
+    if not needed_name:
+        return "Error!", "The period cannot be empty!"
+
     for file_name in file_names:
         with open(f"{os.path.join(current_directory, file_name)}", "r") as file:
             data_provided = file.read()
