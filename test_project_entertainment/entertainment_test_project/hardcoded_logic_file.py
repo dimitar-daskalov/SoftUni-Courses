@@ -60,7 +60,7 @@ def locate_and_move_the_needed_files(folder_name):
         return "Error!", f"No files were found!"
     elif len(file_names) == 4:
         return "Success!", "Successfully transferred all files!"
-    else:
+    elif len(file_names) < 4:
         existing_names_set = set([file_name.split("_")[0] for file_name in file_names if
                                   file_name.split("_")[0] in needed_file_names_and_retailers_dict])
 
